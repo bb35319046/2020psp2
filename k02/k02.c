@@ -9,7 +9,7 @@ extern double p_stdnorm(double z);
 
 int main(void)
 {
-    double ave_A=170.0,var_A=pow(5.43,2),ave_B=169.7,var_B=pow(5.5,2);
+    double ave_A=170.8,var_A=pow(5.43,2),ave_B=169.7,var_B=pow(5.5,2);
     double val,y_A,y_B,f_A,f_B;
     char fname[FILENAME_MAX];
     char buf[256];
