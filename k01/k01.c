@@ -51,18 +51,18 @@ int main(void)
 
 double ave_online(double val,double ave)
 {
-    double ave;
+    double ave1;
 
-    ave=((N-1)*ave + val)/N;
+    ave1=((N-1)*ave + val)/N;
 
-    return ave;
+    return ave1;
 };
 
 double var_online(double val,double ave,double square_ave)
 {
     double var;
 
-    var = ((N-1)*square_ave/N + val*val/N) - pow(((N-1)*ave + val)/N,2);
+    var = ((N-1)*square_ave/N + pow(val,2)/N) - pow(((N-1)*ave + val)/N,2);
 
     return(var);
 };
