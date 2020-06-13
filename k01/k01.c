@@ -6,7 +6,6 @@
 extern double ave_online(double val,double ave);
 extern double var_online(double val,double ave,double square_ave);
 int N;
-
 int main(void)
 {
     double val,ave=0,var=0,square_ave=0,u;
@@ -24,8 +23,8 @@ int main(void)
         fputs("File open error\n",stderr);
         exit(EXIT_FAILURE);
     }
-
     N=0;
+    
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
         N++;
@@ -52,11 +51,11 @@ int main(void)
 
 double ave_online(double val,double ave)
 {
-    double ave1;
+    double ave;
 
-    ave1=((N-1)*ave + val)/N;
+    ave=((N-1)*ave + val)/N;
 
-    return ave1;
+    return ave;
 };
 
 double var_online(double val,double ave,double square_ave)
