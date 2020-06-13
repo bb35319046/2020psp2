@@ -29,9 +29,9 @@ int main(void)
         sscanf(buf,"%lf",&val);
         N++;
         ave = ave_online(val,ave);
-        square_ave = ave_online(pow(val,2),square_ave);
         var = var_online(val,ave,square_ave);
-    }   
+        square_ave = ave_online(pow(val,2),square_ave);
+    }    
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
