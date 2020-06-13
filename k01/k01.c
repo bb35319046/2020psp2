@@ -28,11 +28,10 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
         N++;
-        ave = ave_online(val,ave);
         var = var_online(val,ave,square_ave);
+        ave = ave_online(val,ave);
         square_ave = ave_online(pow(val,2),square_ave);
-    }    
-
+    }     
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
         exit(EXIT_FAILURE);
